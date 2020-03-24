@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Relevamiento.Vistas.Principal"
+             BackgroundColor="#ffffff">
+    <ContentPage.Content>
+
+        <Grid>
+            <Label x:Name="lblUsuario"  HorizontalOptions="Center" FontSize="Medium" />
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Button x:Name="btnComenzar" Clicked="btnComenzar_Clicked" Text="Comenzar" TextColor="Gray" BackgroundColor="#aed4ff" BorderColor="White" BorderWidth="1" CornerRadius="9"/>
+            </StackLayout>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

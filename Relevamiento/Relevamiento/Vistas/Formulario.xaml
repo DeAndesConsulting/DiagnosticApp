@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Relevamiento.Vistas.Formulario"
+             BackgroundColor="#ffffff">
+    <ContentPage.Content>
+        <Grid>
+        <StackLayout>
+            <Label Text="Formulario de preguntas" FontSize="Large" HorizontalTextAlignment="Center"/>
+            <StackLayout x:Name="sloPreguntas">
+                <Grid x:Name="gridFormulario" Margin="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                    </Grid.RowDefinitions>
+                    
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--<Button x:Name="btnAnterior" Text="Anterior" Clicked="btnAnterior_Clicked" Grid.Row="0" Grid.Column="0" BackgroundColor="#aed4ff" BorderColor="White" BorderWidth="1" CornerRadius="9"/>-->
+                    <Button x:Name="btnEnviar" Text="Enviar" Clicked="btnEnviar_Clicked" Grid.Row="0" Grid.Column="1" BackgroundColor="#aed4ff" BorderColor="White" BorderWidth="1" CornerRadius="9"/>
+                    <!--<Button x:Name="btnSiguiente" Text="Siguiente" Clicked="btnSiguiente_Clicked" Grid.Row="0" Grid.Column="2" BackgroundColor="#aed4ff" BorderColor="White" BorderWidth="1" CornerRadius="9"/>-->
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+
+            <ContentView x:Name="cvwActivity" IsVisible="False" BackgroundColor="#9fc1f0" Opacity="0.5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ActivityIndicator Color="Gray" x:Name="aiLogin" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <ActivityIndicator.Color>
+                        <OnPlatform x:TypeArguments="Color" Default="Blue"/>
+                    </ActivityIndicator.Color>
+                </ActivityIndicator>
+            </ContentView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

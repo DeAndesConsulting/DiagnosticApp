@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Relevamiento.Vistas.Login"
+             Title="Ingresar"
+             BackgroundColor="#ffffff">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="/Estilos/Estilos.css" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="logo.png" Scale="1" Opacity="0.8" Margin="0,5" Grid.Row="0"/>
+                <Label x:Name="lblDiagnosticApp" TextColor="Gray" FontSize="Large" Text="DiagnosticApp" Grid.Row="1" HorizontalTextAlignment="Center" Margin="3"/>
+
+                <StackLayout Grid.Row="3">
+                    <Label x:Name="lblImei" IsVisible="False"/>
+                    <Label x:Name="lblMensaje" TextColor="Gray" HorizontalTextAlignment="Center" ></Label>
+
+                    <StackLayout x:Name="sloLogin" IsVisible="True">
+                        <Entry x:Name="entryDni" Placeholder="Ingrese su DNI" PlaceholderColor="Gray" TextColor="Gray" Keyboard="Numeric" TextChanged="entryDni_TextChanged" />
+                        <Label x:Name="lblDNIfail" Text="Debe ingresar su DNI." TextColor="Red" FontSize="Small" IsVisible="False"/>
+
+                        <Entry x:Name="entryNombre" Placeholder="Ingrese su Nombre" PlaceholderColor="Gray" TextColor="Gray" TextChanged="entryNombre_TextChanged"/>
+                        <Label x:Name="lblNombrefail" Text="Debe ingresar su Nombre" TextColor="Red" FontSize="Small" IsVisible="False"/>
+
+                        <Entry x:Name="entryApellido" Placeholder="Ingrese su Apellido" PlaceholderColor="Gray" TextColor="Gray" TextChanged="entryApellido_TextChanged"/>
+                        <Label x:Name="lblApellidofail" Text="Debe ingresar su Apellido" TextColor="Red" FontSize="Small" IsVisible="False"/>
+
+                        <Entry x:Name="entryGenero" Placeholder="Ingrese su Genero (Masculino, Femenino, Otro)" PlaceholderColor="Gray" TextColor="Gray" TextChanged="entryGenero_TextChanged"/>
+                        <Label x:Name="lblGenerofail" Text="Debe ingresar su Genero" TextColor="Red" FontSize="Small" IsVisible="False"/>
+
+                        <Button Text="Ingresar" x:Name="btnComenzar" Clicked="btnComenzar_Clicked" TextColor="Gray" BackgroundColor="#aed4ff" BorderColor="White" BorderWidth="1" CornerRadius="9"/>
+                    </StackLayout>
+
+                    <!--<Button Text="Ingresar" Clicked="ObtenerImei" BorderColor="Aqua" BorderWidth="1" BorderRadius="60"/>-->
+                </StackLayout>
+            </Grid>
+
+            <ContentView x:Name="cvwActivity" IsVisible="False" BackgroundColor="#9fc1f0" Opacity="0.5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ActivityIndicator Color="Gray" x:Name="aiLogin" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <ActivityIndicator.Color>
+                        <OnPlatform x:TypeArguments="Color" Default="Blue"/>
+                    </ActivityIndicator.Color>
+                </ActivityIndicator>
+            </ContentView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
